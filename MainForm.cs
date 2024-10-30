@@ -17,6 +17,7 @@ namespace ModbusGeneatorDIAT
     public partial class MainForm : Form
     {
         ModbusClient modbusClient = new ModbusClient();
+
         ModbusServer modbusServer;
 
         DispatcherTimer timerPollWrite = new DispatcherTimer();
