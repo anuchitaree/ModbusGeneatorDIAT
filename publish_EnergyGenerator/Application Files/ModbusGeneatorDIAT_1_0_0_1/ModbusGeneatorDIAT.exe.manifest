@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ModbusGeneatorDIAT.exe" version="1.0.0.1" publicKeyToken="3bcd2eed85134e76" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ModbusGeneatorDIAT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ModbusGeneatorDIAT.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EasyModbus.dll" size="72704">
+      <assemblyIdentity name="EasyModbus" version="5.6.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>g7ytCCXKURJAzL2Q95+qB7wm/Pb7GvU7c13A5115X4k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ModbusGeneatorDIAT.exe" size="19472">
+      <assemblyIdentity name="ModbusGeneatorDIAT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>D9Yp0vIWO/UCUusjMHHNCTTo60Q8N9Ts3ejs1mBXLPk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ModbusGeneatorDIAT.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-FFPHI9P\Administrator" issuerKeyHash="0a5a4a07a61ba2c3ebcd02896fb2d21d54541afb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>xmyFEnTGfIKGAAsd8ZmzqCYqd0lcfiwxbnRJ2K0oSjE=</DigestValue></Reference></SignedInfo><SignatureValue>KWmwcpMk+JieOymrynD34bIjy9nFt+/fE4J3zeqWbGUESbLAq9gkdHGkuKMxIJVGrHKa6nXOHwTx/W8u5nZNp8gk7VFdg9AQnOti2GKguzMA0KdXoqNta/eRwX6U/I2OkdJ7/XAIXlC+V0RSsOCGdHbUq3OV1sCEyEEpuwLiIfI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qyxbvzvzTl83YUg+t5cNQbcU8Y0TEPrJIKSgSuwvk71tJ/nKYgNpv479WFdeEH/Lt+nPHCYBhrgYjKdeHEI70jxIcbtGBTftWdjPTkuU2zOWRCamXxzRrm5sZVCcT+8zxkTEvEJmGjZMDQmSo4b8VUQl2tkMnYH+hdmNk327gbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="314a28add849746e312c7e5c49772a26a8b399f11d0b0086827cc67412856cc6" Description="" Url=""><as:assemblyIdentity name="ModbusGeneatorDIAT.exe" version="1.0.0.1" publicKeyToken="3bcd2eed85134e76" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-FFPHI9P\Administrator</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>LhDwDmOugcdkiuxyQbi+4VWArmSMglGgRgmbio/YHx8=</DigestValue></Reference></SignedInfo><SignatureValue>jUu5FORW3tAxj7EA6pvhutCqR7+OPGEkdpLORkguD2QLm1UQM+6QIS8AJ+xKfYvbyuhDa7RuFNi6j+mSaIHtUkS3t8zF4yiZg2XiCtj1uRgytBrfdbx5Df6ZM4JQWZ9qDHqzgNUc7ZmIVaSdxxn7JQabbjLa2JqkVhZXcGWaErM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qyxbvzvzTl83YUg+t5cNQbcU8Y0TEPrJIKSgSuwvk71tJ/nKYgNpv479WFdeEH/Lt+nPHCYBhrgYjKdeHEI70jxIcbtGBTftWdjPTkuU2zOWRCamXxzRrm5sZVCcT+8zxkTEvEJmGjZMDQmSo4b8VUQl2tkMnYH+hdmNk327gbk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIICDTCCAXagAwIBAgIQdad3h6EOI49E62zbsENPVTANBgkqhkiG9w0BAQsFADBFMUMwQQYDVQQDHjoARABFAFMASwBUAE8AUAAtAEYARgBQAEgASQA5AFAAXABBAGQAbQBpAG4AaQBzAHQAcgBhAHQAbwByMB4XDTI0MTAyOTA3MzQzNVoXDTI1MTAyOTEzMzQzNVowRTFDMEEGA1UEAx46AEQARQBTAEsAVABPAFAALQBGAEYAUABIAEkAOQBQAFwAQQBkAG0AaQBuAGkAcwB0AHIAYQB0AG8AcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAqyxbvzvzTl83YUg+t5cNQbcU8Y0TEPrJIKSgSuwvk71tJ/nKYgNpv479WFdeEH/Lt+nPHCYBhrgYjKdeHEI70jxIcbtGBTftWdjPTkuU2zOWRCamXxzRrm5sZVCcT+8zxkTEvEJmGjZMDQmSo4b8VUQl2tkMnYH+hdmNk327gbkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBVYFfSJW/OsYWYkvbaA9kbelvEG4k5y/kx75ap31nZp95WCB1k4tFYxk9huZyC15HUKQu1QP2XL+3a0EL2qu4JWyathFVxm3mHJHZHPtIp35zKxtb9SzOOp838b/jImOgRXiomT1cSX2nX+9ENVIJfL4uwRX2NSSrwlctebbHplQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

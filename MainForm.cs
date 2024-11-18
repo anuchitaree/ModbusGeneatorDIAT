@@ -1,14 +1,8 @@
 ﻿using EasyModbus;
 using ModbusGeneatorDIAT.Modules;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Threading;
 
@@ -36,8 +30,8 @@ namespace ModbusGeneatorDIAT
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string[] header = new string[] { "InputRegAddr", "Updating value", "Description","Update" };
-            int[] width = new int[] { 100, 100, 150,200 };
+            string[] header = new string[] { "InputRegAddr", "Updating value", "Description", "Update" };
+            int[] width = new int[] { 100, 100, 150, 200 };
 
             InitDataGridView.Pattern_1(dgv, header, width);
         }
@@ -179,6 +173,11 @@ namespace ModbusGeneatorDIAT
         {
             try
             {
+                int radenergy0;
+                int radenergy1;
+                int radenergy2;
+                int radenergy3;
+                int radflow;
 
                 energyacc0 = energyacc0 > 999999999 ? 0 : energyacc0;
                 energyacc1 = energyacc1 > 999999999 ? 0 : energyacc1;
@@ -188,18 +187,54 @@ namespace ModbusGeneatorDIAT
                 flowacc = flowacc > 999999999 ? 0 : flowacc;
 
                 Random rnd = new Random();
-                int radenergy0 = rnd.Next(1, 3);
-                int radenergy1 = rnd.Next(1, 4);
-                int radenergy2 = rnd.Next(1, 5);
-                int radenergy3 = rnd.Next(1, 6);
-                int radflow = rnd.Next(1, 3);
 
+
+                int whichday = (int)DateTime.Now.DayOfWeek;
+                var datenow = DateTime.Now;
+                var year = datenow.Year;
+                var month = datenow.Month;
+                var day = datenow.Day;
+
+                bool daycondition = whichday >= 1 && whichday <= 5;
+                var starttime1 = new DateTime(year, month, day, 7, 30, 0);
+                var stoptime1 = new DateTime(year, month, day, 9, 30, 0);
+
+                var starttime2 = new DateTime(year, month, day, 9, 40, 0);
+                var stoptime2 = new DateTime(year, month, day, 11, 30, 0);
+
+                var starttime3 = new DateTime(year, month, day, 12, 30, 0);
+                var stoptime3 = new DateTime(year, month, day, 14, 20, 0);
+
+                var starttime4 = new DateTime(year, month, day, 14, 30, 0);
+                var stoptime4 = new DateTime(year, month, day, 16, 30, 0);
+
+                bool timecondition = (starttime1 <= datenow && datenow <= stoptime1) ||
+                    (starttime2 <= datenow && datenow <= stoptime2) ||
+                    (starttime3 <= datenow && datenow <= stoptime3) ||
+                    (starttime4 <= datenow && datenow <= stoptime4);
+                if (daycondition && timecondition)
+                {
+                    radenergy0 = rnd.Next(5, 10);
+                    radenergy1 = rnd.Next(5, 10);
+                    radenergy2 = rnd.Next(5, 10);
+                    radenergy3 = rnd.Next(5, 10);
+                    radflow = rnd.Next(7, 10);
+                    prodacc += 1;
+
+                }
+                else
+                {
+                    radenergy0 = rnd.Next(1, 3);
+                    radenergy1 = rnd.Next(1, 3);
+                    radenergy2 = rnd.Next(1, 3);
+                    radenergy3 = rnd.Next(1, 3);
+                    radflow = rnd.Next(1, 3);
+                }
 
                 energyacc0 = energyacc0 + radenergy0;
                 energyacc1 = energyacc1 + radenergy1;
                 energyacc2 = energyacc2 + radenergy2;
                 energyacc3 = energyacc3 + radenergy3;
-                prodacc += 1;
                 flowacc = flowacc + radflow;
 
 
@@ -297,7 +332,7 @@ namespace ModbusGeneatorDIAT
 
                     btnStart.Text = "Starting";
                     btnStart.BackColor = Color.GreenYellow;
-                    tbIP.ReadOnly= true;
+                    tbIP.ReadOnly = true;
                     tbPort.ReadOnly = true;
                     tbScanrate.ReadOnly = true;
                 }
