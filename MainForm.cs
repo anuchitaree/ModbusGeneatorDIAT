@@ -208,17 +208,36 @@ namespace ModbusGeneatorDIAT
                 var starttime4 = new DateTime(year, month, day, 14, 30, 0);
                 var stoptime4 = new DateTime(year, month, day, 16, 30, 0);
 
+
+                var starttime5 = new DateTime(year, month, day, 19, 30, 0);
+                var stoptime5 = new DateTime(year, month, day, 21, 30, 0);
+
+                var starttime6 = new DateTime(year, month, day, 21, 40, 0);
+                var stoptime6 = new DateTime(year, month, day, 23, 30, 0);
+
+                var starttime7 = new DateTime(year, month, day, 0, 30, 0);
+                var stoptime7 = new DateTime(year, month, day, 2, 30, 0);
+
+                var starttime8 = new DateTime(year, month, day, 2, 40, 0);
+                var stoptime8 = new DateTime(year, month, day, 4, 20, 0);
+
                 bool timecondition = (starttime1 <= datenow && datenow <= stoptime1) ||
                     (starttime2 <= datenow && datenow <= stoptime2) ||
                     (starttime3 <= datenow && datenow <= stoptime3) ||
-                    (starttime4 <= datenow && datenow <= stoptime4);
+                    (starttime4 <= datenow && datenow <= stoptime4) ||
+                    (starttime5 <= datenow && datenow <= stoptime5) ||
+                    (starttime6 <= datenow && datenow <= stoptime6) ||
+                    (starttime7 <= datenow && datenow <= stoptime7) ||
+                    (starttime8 <= datenow && datenow <= stoptime8);
+
+
                 if (daycondition && timecondition)
                 {
-                    radenergy0 = rnd.Next(5, 10);
-                    radenergy1 = rnd.Next(5, 10);
-                    radenergy2 = rnd.Next(5, 10);
-                    radenergy3 = rnd.Next(5, 10);
-                    radflow = rnd.Next(7, 10);
+                    radenergy0 = rnd.Next(100, 105);
+                    radenergy1 = rnd.Next(110, 115);
+                    radenergy2 = rnd.Next(100, 107);
+                    radenergy3 = rnd.Next(110, 115);
+                    radflow = rnd.Next(100, 110);
                     prodacc += 1;
 
                 }
